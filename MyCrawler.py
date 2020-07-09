@@ -42,7 +42,7 @@ class MyCrawler():
                 else:
                     print("LOG: Duplicate URL found!")
                     continue
-            return len(self.resultList)==0
+            return len(self.g_clean)==0
         except Exception as e:
             print(str(e))
             
