@@ -33,11 +33,14 @@ class MyCrawler():
     #Function to initiate google search based on Query
     def search(self):
         try:
-            resultList = search(self.query, tld="com",lang = "en", num=10000, start=0,stop=1000,pause=2)
+            resultList = search(self.query, tld="com",lang = "en", num=1000,stop=1000,pause=2.0)
             for result in resultList:
+                print("URL:"+str(result))
                 if result not in self.g_clean:
+                    print("LOG: URL added to List")
                     self.g_clean.append(result)
                 else:
+                    print("LOG: Duplicate URL found!")
                     continue
             return len(self.resultList)==0
         except Exception as e:
